@@ -1,10 +1,11 @@
 # mimotion for email
 
 
-# 小米运动自动刷步数For Email
+# 小米运动刷步数For Email
 
-> 小米运动自动刷步数For Email
-> 小米运动刷步数支持邮箱版
+> 小米运动刷步数For Email
+> 小米运动刷步数邮箱版
+> 仅支持邮箱账户
 
 ## Github Actions 部署指南
 
