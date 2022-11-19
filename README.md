@@ -65,7 +65,7 @@
 **7. 本人业余，东拼西凑机缘巧合做成的，反馈问题本人不会处理**
 
 
-
-## Stargazers over time
+## Star History
 
 [![Stargazers over time](https://starchart.cc/wearehere8/mimotion-for-email.svg)](https://starchart.cc/wearehere8/mimotion-for-email)
+
