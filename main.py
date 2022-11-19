@@ -239,7 +239,7 @@ def push_wx(desp=""):
         print(sckey == "NO")
         return
     else:
-        server_url = f"https://sc.ftqq.com/{sckey}.send"
+        server_url = f"https://sctapi.ftqq.com/{sckey}.send"
         params = {
             "text": '【✍小米运动步数修改✍】',
             "desp": desp
