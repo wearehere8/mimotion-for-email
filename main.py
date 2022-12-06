@@ -238,6 +238,9 @@ def push_wx(desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
         return
+    if setp <= "5000"
+        print("步数小于5000，暂时不推送通知")
+        return
     else:
         server_url = f"https://sctapi.ftqq.com/{sckey}.send"
         params = {
