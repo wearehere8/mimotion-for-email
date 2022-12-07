@@ -239,7 +239,7 @@ def push_wx(step, desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
         return
-    if int(step) <= 5000:
+    elseif step <= 5000:
         print("步数<=5000，不推送通知")
         return
     else:
