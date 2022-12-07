@@ -235,10 +235,12 @@ def get_app_token(login_token):
     return app_token
 
 # 推送server
-def push_wx(desp=""):
+def push_wx(step, desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
         return
+    if step <5000
+        print("步数小于5000，不推送通知")
     else:
         server_url = f"https://sctapi.ftqq.com/{sckey}.send"
         params = {
