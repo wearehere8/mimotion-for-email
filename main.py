@@ -239,9 +239,6 @@ def push_wx(step, desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
         return
-    elseif step <= 5000:
-        print("步数<=5000，不推送通知")
-        return
     else:
         server_url = f"https://sctapi.ftqq.com/{sckey}.send"
         params = {
