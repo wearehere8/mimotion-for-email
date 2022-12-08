@@ -178,10 +178,7 @@ def login(user, password):
 def main(_user, _passwd, min_1, max_1):
     user = str(_user)
     password = str(_passwd)
-    #step = str(random.randint(min_1, max_1))
-    global stepnum
-    stepnum = random.randint(min_1, max_1)
-    step = str(stepnum)
+    step = str(random.randint(min_1, max_1))
     return step
     print("已设置为随机步数(" + str(min_1) + "~" + str(max_1) + ")")
     if user == '' or password == '':
@@ -241,10 +238,6 @@ def get_app_token(login_token):
 def push_wx(stepnum, desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
-        return
-    elif int(1 * stepnum) <= 5000:
-        print(stepnum)
-        print("步数不超过5000，不推送通知")
         return
     else:
         server_url = f"https://sctapi.ftqq.com/{sckey}.send"
