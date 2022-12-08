@@ -238,11 +238,12 @@ def get_app_token(login_token):
     return app_token
 
 # 推送server
-def push_wx(stepnum, step, desp=""):
+def push_wx(stepnum, desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
         return
     elif stepnum <= 5000:
+        print(stepnum)
         print("步数不超过5000，不推送通知")
         return
     else:
