@@ -235,7 +235,7 @@ def get_app_token(login_token):
     return app_token
 
 # 推送server
-def push_wx(stepnum, desp=""):
+def push_wx(desp=""):
     if sckey == 'NO':
         print(sckey == "NO")
         return
