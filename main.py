@@ -125,9 +125,14 @@ def get_code(location):
     return code
 
 
-# 登录
 def login(user, password):
-    url1 = "https://api-user.huami.com/registrations/" + user + "/tokens"
+    is_phone = False
+    if re.match(r'\d{11}', user):
+        is_phone = True
+    if is_phone:
+        url1 = "https://api-user.huami.com/registrations/+86" + user + "/tokens"
+    else:
+        url1 = "https://api-user.huami.com/registrations/" + user + "/tokens"
     headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2"
@@ -148,21 +153,33 @@ def login(user, password):
     # print(code)
 
     url2 = "https://account.huami.com/v2/client/login"
-    data2 = {
-        "allow_registration=": "false",
-        "app_name": "com.xiaomi.hm.health",
-        "app_version": "6.3.5",
-        "code": f"{code}",
-        "country_code": "CN",
-        "device_id": "2C8B4939-0CCD-4E94-8CBA-CB8EA6E613A1",
-        "device_model": "phone",
-        "dn": "api-user.huami.com%2Capi-mifit.huami.com%2Capp-analytics.huami.com",
-        "grant_type": "access_token",
-        "lang": "zh_CN",
-        "os_version": "1.5.0",
-        "source": "com.xiaomi.hm.health",
-        "third_name": "email",
-    }
+    if is_phone:
+        data2 = {
+            "app_name": "com.xiaomi.hm.health",
+            "app_version": "4.6.0",
+            "code": f"{code}",
+            "country_code": "CN",
+            "device_id": "2C8B4939-0CCD-4E94-8CBA-CB8EA6E613A1",
+            "device_model": "phone",
+            "grant_type": "access_token",
+            "third_name": "huami_phone",
+        }
+    else:
+        data2 = {
+            "allow_registration=": "false",
+            "app_name": "com.xiaomi.hm.health",
+            "app_version": "6.3.5",
+            "code": f"{code}",
+            "country_code": "CN",
+            "device_id": "2C8B4939-0CCD-4E94-8CBA-CB8EA6E613A1",
+            "device_model": "phone",
+            "dn": "api-user.huami.com%2Capi-mifit.huami.com%2Capp-analytics.huami.com",
+            "grant_type": "access_token",
+            "lang": "zh_CN",
+            "os_version": "1.5.0",
+            "source": "com.xiaomi.hm.health",
+            "third_name": "email",
+        }
     r2 = requests.post(url2, data=data2, headers=headers).json()
     login_token = r2["token_info"]["login_token"]
     # print("login_token获取成功！")
