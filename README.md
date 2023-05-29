@@ -1,5 +1,5 @@
 # mimotion for email
-
+# 失效了，暂时不修复
 
 # 小米运动刷步数For Email
 
